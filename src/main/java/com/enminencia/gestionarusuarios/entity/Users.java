@@ -1,29 +1,58 @@
-package com.enminencia.gestionusuarios.entity;
+package com.enminencia.gestionarusuarios.entity;
 
-import jakarta.persistence.column;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistece.Table;
-import lombok.Data;
+import jakarta.persistence.Table;
 
-@Data 
-@Entity // no crea un bean 
-@table(name = "users")
-public  class Users {
-    @Id // Primary Key 
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // AUTO INCREMENTAL
-    @Column(name = "id")
+@Entity
+@Table(name = "users")
+public class Users {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @column(name = "username")
+    @Column(name = "username")
     private String username;
 
-    @column(name = "age")
+    @Column(name = "age")
     private Long age;
 
-    @column(name = "email")
-    private  String email;
+    @Column(name = "email")
+    private String email;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Long getAge() {
+        return age;
+    }
+
+    public void setAge(Long age) {
+        this.age = age;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
